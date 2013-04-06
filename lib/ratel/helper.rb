@@ -17,7 +17,6 @@ module Ratel
         num = session[u] % 100
         options[:to].each do |k,v|
           bar += v
-          puts "#####{k}##### #{num} :=: #{bar} #######"
           if num < bar
             session[s][name] = "_#{k}"
             break
