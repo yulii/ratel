@@ -2,6 +2,8 @@
 
 A/B Testing on Rails
 
+Let's enjoy UX-driven development!
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -18,7 +20,8 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+1. Define the block to switch the multiple patterns (`screen_changes` method)
+2. Define the conversion (`screen_conversion` method)
 
 ### A/B Testing
 Pattern A 50% / Pattern B 30% / Original 20%
