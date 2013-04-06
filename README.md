@@ -1,6 +1,6 @@
 # Ratel
 
-TODO: Write a gem description
+A/B Testing on Rails
 
 ## Installation
 
@@ -19,6 +19,16 @@ Or install it yourself as:
 ## Usage
 
 TODO: Write usage instructions here
+
+### A/B Testing
+Pattern A 50% / Pattern B 30% / Original 20%
+    <% screen_changes at: :cassette, to: { a: 50, b: 30 }, with: :reset do |g| %>
+    <dl>
+      <dt>Selected Group</dt>
+      <dd><%= g %></dd>
+    </dl>
+    <a href="javascript: <%= screen_conversion :cassette, :click, g %>">Conversion!</a>
+    <% end %>
 
 ## Contributing
 

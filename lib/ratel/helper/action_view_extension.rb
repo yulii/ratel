@@ -5,16 +5,14 @@ module Ratel
       options = args.extract_options!
       
       s = :_screen_ticket
-      u = :_request_usec
-      
-      session[u] = Time.now.usec
+
       session[s] ||= {}
       session[s] = {} if options[:with] == :reset
       
       name = options[:at]
       unless session[s].key? name
         bar = 0
-        num = session[u] % 100
+        num = Time.now.usec % 100
         options[:to].each do |k,v|
           bar += v
           if num < bar
@@ -24,6 +22,10 @@ module Ratel
         end
       end
       block.call session[s][name] || ''
+    end
+
+    def screen_conversion category, action, label
+      Ratel::Tracking::Event.push category, action, label
     end
 
   end
