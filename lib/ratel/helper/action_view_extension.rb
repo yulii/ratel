@@ -6,13 +6,13 @@ module Ratel
       key = :"#{Ratel.config.screen_key}#{options[:at]}"
       
       if options[:with] == :reset or cookies[key].nil?
-        selected = '_default'
+        selected = :default
         bar = 0
         num = Time.now.usec % 100
         options[:to].each do |k,v|
           bar += v
           if num < bar
-            selected = "_#{k}"
+            selected = k
             break
           end
         end
