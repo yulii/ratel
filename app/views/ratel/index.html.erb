@@ -1,0 +1,7 @@
+<p>TEST</p>
+<% screen_changes at: :cassette, to: { a: 50, b: 30 }, with: :reset do |g| %>
+<dl>
+  <dt>Selected Group</dt>
+  <dd><%= g %></dd>
+</dl>
+<% end %>

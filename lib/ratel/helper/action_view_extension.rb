@@ -1,5 +1,5 @@
 module Ratel
-  module Helper
+  module ActionViewExtension
 
     def screen_changes *args, &block
       options = args.extract_options!
