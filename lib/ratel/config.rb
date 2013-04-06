@@ -15,6 +15,7 @@ module Ratel
 
   class Configuration #:nodoc:
     include ActiveSupport::Configurable
+    config_accessor :screen_key
     config_accessor :tracking
 
     def param_name
@@ -28,6 +29,7 @@ module Ratel
   end
 
   configure do |config|
-    config.tracking = :google_analytics
+    config.screen_key = :_screen_key_
+    config.tracking   = :google_analytics
   end
 end

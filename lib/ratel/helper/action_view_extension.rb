@@ -3,25 +3,22 @@ module Ratel
 
     def screen_changes *args, &block
       options = args.extract_options!
+      key = :"#{Ratel.config.screen_key}#{options[:at]}"
       
-      s = :_screen_ticket
-
-      session[s] ||= {}
-      session[s] = {} if options[:with] == :reset
-      
-      name = options[:at]
-      unless session[s].key? name
+      if options[:with] == :reset or cookies[key].nil?
+        selected = '_default'
         bar = 0
         num = Time.now.usec % 100
         options[:to].each do |k,v|
           bar += v
           if num < bar
-            session[s][name] = "_#{k}"
+            selected = "_#{k}"
             break
           end
         end
+        cookies.permanent.signed[key] = selected
       end
-      block.call session[s][name] || ''
+      block.call cookies.signed[key]
     end
 
     def screen_conversion category, action, label

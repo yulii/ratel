@@ -6,3 +6,10 @@
 </dl>
 <a href="javascript: <%= screen_conversion :cassette, :click, g %>">Conversion!</a>
 <% end %>
+<% screen_changes at: :list, to: { a: 30, b: 30, c: 30 }, with: :reset do |g| %>
+<dl>
+  <dt>Selected Group</dt>
+  <dd><%= g %></dd>
+</dl>
+<a href="javascript: <%= screen_conversion :list, :click, g %>">Conversion!</a>
+<% end %>
