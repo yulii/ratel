@@ -4,6 +4,9 @@ A/B Testing on Rails
 
 Let's enjoy UX-driven development!
 
+## Supported
+- Google Analytics
+
 ## Installation
 
 Add this line to your application's Gemfile:
