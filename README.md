@@ -1,4 +1,5 @@
 # Ratel
+[![Gem Version](https://badge.fury.io/rb/ratel.png)](http://badge.fury.io/rb/ratel)
 
 A/B Testing on Rails
 
@@ -35,7 +36,7 @@ $ gem install ratel
 ### A/B Testing
 Pattern A 50% / Pattern B 30% / Original 20%
 
-```
+```html+ruby
 <% screen_changes at: :cassette, to: { a: 50, b: 30 }, with: :reset do |g| %>
   <dl>
     <dt>Selected Group</dt>
