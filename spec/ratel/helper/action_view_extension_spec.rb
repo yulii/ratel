@@ -1,12 +1,19 @@
 # coding: UTF-8
 require 'spec_helper'
 
-include Ratel::ActionViewExtension
 describe Ratel::ActionViewExtension do
 
   before do
+    Ratel.configure do |config|
+      config.tracking = tracking
+    end
+    Ratel::Initializer.execute
+  end
+
+  let(:tracking) { :google_analytics }
+
+  before do
     visit "/index"
-    puts page.html
   end
 
   subject { page }

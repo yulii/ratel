@@ -1,7 +1,8 @@
 # coding: UTF-8
 require 'spec_helper'
 
-describe Ratel::Tracking::Event do
+# auto-define class
+describe Ratel::Initializer do
 
   before do
     Ratel.configure do |config|
@@ -11,9 +12,10 @@ describe Ratel::Tracking::Event do
 
   context "implemented tracking system" do
     let(:tracking) { :google_analytics }
+    before { Ratel::Initializer.execute }
 
-    it "expects to be called `_push` method" do
-      expect(Ratel::Tracking::Event.methods.include? :_push).to be_true
+    it "expects to be called `push` method" do
+      expect(Ratel::Tracking::Event.methods.include? :push).to be_true
     end
   end
 
@@ -21,7 +23,7 @@ describe Ratel::Tracking::Event do
     let(:tracking) { :unknown }
 
     it "expects to raise NotImplementedError" do
-      expect { Ratel::Tracking::Event.push :category, :action, :label }.to raise_error NotImplementedError
+      expect { Ratel::Initializer.execute }.to raise_error NotImplementedError
     end
   end
 end

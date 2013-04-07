@@ -24,6 +24,7 @@ module Ratel
     end
 
     def screen_conversion category, action, label
+      # Ratel::Tracking::Event class is auto-defined
       Ratel::Tracking::Event.push category, action, label
     end
 

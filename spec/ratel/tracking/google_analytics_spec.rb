@@ -9,9 +9,17 @@ describe Ratel::Tracking::GoogleAnalytics do
     end
   end
 
-  describe "conversion's method `_push`" do
+  describe "conversion's method `push`" do
     it "expects to be called" do
-      expect(object.methods.include? :_push).to be_true
+      expect(object.methods.include? :push).to be_true
+    end
+
+    context "call `push` method" do
+      let(:result) { object.push category: "A/B Testing", action: "click", label: "button" }
+
+      it "expects to return same results" do
+        expect(object.push "A/B Testing", :click, :button).to eq(result) 
+      end
     end
   end
 
