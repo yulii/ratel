@@ -1,7 +1,7 @@
 # Ratel
 [![Gem Version](https://badge.fury.io/rb/ratel.png)](http://badge.fury.io/rb/ratel)
 
-A/B Testing on Rails
+A/B Testing for Rails
 
 Let's enjoy UX-driven development!
 
