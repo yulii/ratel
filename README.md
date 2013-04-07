@@ -37,8 +37,8 @@ Pattern A 50% / Pattern B 30% / Original 20%
     <a href="javascript: <%= screen_conversion :cassette, :click, g %>">Conversion!</a>
     <% end %>
 
-### Tips
-#### Create your own Tracking System
+## Advanced Tips
+### Create your own Tracking System
 Define the tracking class (`Ratel::Tracking::MyTrackingSystem`) and `push` method.
     $ vi lib/tracking/my_tracking_system.rb
     module Ratel
