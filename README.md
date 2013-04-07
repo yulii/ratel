@@ -37,6 +37,29 @@ Pattern A 50% / Pattern B 30% / Original 20%
     <a href="javascript: <%= screen_conversion :cassette, :click, g %>">Conversion!</a>
     <% end %>
 
+### Tips
+#### Create your own Tracking System
+Define the tracking class (`Ratel::Tracking::MyTrackingSystem`) and `push` method.
+    $ vi lib/tracking/my_tracking_system.rb
+    module Ratel
+      module Tracking
+        module MyTrackingSystem
+    
+          # `args` equals screen_conversion's args
+          def push *args
+            # options = args.extract_options!
+            # ...
+          end
+          
+        end
+      end
+    end
+Rails Config
+    Ratel.configure do |config|
+      config.tracking = :my_tracking_system # snake_case symbol or string
+    end
+Execute your method (`Ratel::Tracking::MyTrackingSysmtem.push`) when `screen_conversion` method called.
+
 ## Contributing
 
 1. Fork it
