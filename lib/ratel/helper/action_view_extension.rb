@@ -7,6 +7,8 @@ module Ratel
 
       ## TODO A/B テストの停止ロジック
       # redis などのkey-value 対応 or 設定ファイルでの制御？      
+      ## TODO 想定外のエラー（例外）があった場合のデフォルト表示を検討
+      # サービス稼働へ影響をしないようにする
       if options[:with] == :reset or cookies[key].nil?
         selected = :default
         bar = 0
