@@ -4,7 +4,9 @@ module Ratel
     def screen_changes *args, &block
       options = args.extract_options!
       key = :"#{Ratel.config.screen_key}#{options[:at]}"
-      
+
+      ## TODO A/B テストの停止ロジック
+      # redis などのkey-value 対応 or 設定ファイルでの制御？      
       if options[:with] == :reset or cookies[key].nil?
         selected = :default
         bar = 0

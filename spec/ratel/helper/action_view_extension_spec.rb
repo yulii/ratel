@@ -5,7 +5,7 @@ include Ratel::ActionViewExtension
 describe Ratel::ActionViewExtension do
 
   before do
-    visit "/"
+    visit "/index"
     puts page.html
   end
 

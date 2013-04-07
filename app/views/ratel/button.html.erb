@@ -1,0 +1,17 @@
+<h1>What's the BEST color for high conversions?</h1>
+<% screen_changes at: :button, to: { red: 20, pink: 20, orange: 20, green: 20, blue: 20 }, with: :reset do |g| %>
+  <% case g %>
+  <% when :red %>
+    <a href="/done" onclick="<%= screen_conversion :button, :click, g %>" class="<%= g %>">Conversion!</a>
+  <% when :pink %>
+    <a href="/done" onclick="<%= screen_conversion :button, :click, g %>" class="<%= g %>">Conversion!</a>
+  <% when :orange %>
+    <a href="/done" onclick="<%= screen_conversion :button, :click, g %>" class="<%= g %>">Conversion!</a>
+  <% when :green %>
+    <a href="/done" onclick="<%= screen_conversion :button, :click, g %>" class="<%= g %>">Conversion!</a>
+  <% when :blue %>
+    <a href="/done" onclick="<%= screen_conversion :button, :click, g %>" class="<%= g %>">Conversion!</a>
+  <% else %>
+    <a href="/done" onclick="<%= screen_conversion :button, :click, g %>" class="<%= g %>">Conversion!</a>
+  <% end %>
+<% end %>

@@ -10,17 +10,22 @@ app.config.generators do |g|
 end
 app.initialize!
 
+ACTIONS = [:index, :button]
+
 # routing
 app.routes.draw do
-  get "/"  =>"ratel#index"  ,as: :index
+  ACTIONS.each do |e|
+    get "/#{e}"  =>"ratel##{e}"  ,as: e
+  end
 end
 
 # controllers
 class ApplicationController < ActionController::Base ; end
 
 class RatelController < ApplicationController
-  def index
-
+  ACTIONS.each do |e|
+    define_method e do
+    end
   end
 end
 
