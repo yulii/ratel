@@ -1,5 +1,7 @@
 # Ratel
 [![Gem Version](https://badge.fury.io/rb/ratel.png)](http://badge.fury.io/rb/ratel)
+[![Coverage Status](https://coveralls.io/repos/yulii/ratel/badge.png?branch=master)](https://coveralls.io/r/yulii/ratel)
+[![Build Status](https://travis-ci.org/yulii/ratel.png)](https://travis-ci.org/yulii/ratel)
 
 A/B Testing for Rails
 
