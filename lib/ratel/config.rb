@@ -17,6 +17,9 @@ module Ratel
     include ActiveSupport::Configurable
     config_accessor :screen_key
     config_accessor :tracking
+    config_accessor :ref_code
+    config_accessor :ref_domein
+    config_accessor :ref_keyword
 
     def param_name
       config.param_name.respond_to?(:call) ? config.param_name.call : config.param_name
@@ -29,7 +32,10 @@ module Ratel
   end
 
   configure do |config|
-    config.screen_key = :_screen_key_
-    config.tracking   = :google_analytics
+    config.screen_key  = :_screen_key_
+    config.tracking    = :google_analytics
+    config.ref_code    = 'rfcd'
+    config.ref_domein  = 'ref_domain'
+    config.ref_keyword = 'ref_keyword'
   end
 end
